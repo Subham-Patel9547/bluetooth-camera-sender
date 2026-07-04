@@ -41,7 +41,7 @@ class NativeBluetoothService {
   /// Send START / STOP / SWITCH / FLASH
   Future<bool> sendCommand(String command) async {
     try {
-      // ✅ FIX: String ke peeche newline (\n) add karna mandatory hai
+      //  FIX: String ke peeche newline (\n) add karna mandatory hai
       // Taki Receiver side ka native reader loop block na ho aur instantly command read kare.
       final String formattedCommand = command.trim() + "\n";
 

@@ -48,7 +48,7 @@ class BluetoothProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
-      // ✅ FIX: 'final const' hata kar sirf 'const' ya 'final' lagayein
+      //  FIX: 'final const' hata kar sirf 'const' ya 'final' lagayein
       const platform = MethodChannel('bluetooth_camera');
 
       // Native Kotlin/Java ko trigger karein taaki wo socket close kare
@@ -212,7 +212,7 @@ class BluetoothProvider extends ChangeNotifier {
   }
 
   // ==========================================
-  // ✅ FIXED: SWITCH CAMERA (Ab Error Nahi Aayega!)
+  //  FIXED: SWITCH CAMERA (Ab Error Nahi Aayega!)
   // ==========================================
   Future<void> switchCamera() async {
     await _sendRemoteCommand(
@@ -223,7 +223,7 @@ class BluetoothProvider extends ChangeNotifier {
   }
 
   // ==========================================
-  // ✅ BONUS FEATURE: REMOTE FLASH CONTROL
+  //  BONUS FEATURE: REMOTE FLASH CONTROL
   // ==========================================
   Future<void> toggleFlash() async {
     await _sendRemoteCommand(

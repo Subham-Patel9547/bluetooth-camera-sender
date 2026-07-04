@@ -129,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       final name = device["name"] ?? "Unknown Device";
                       final address = device["address"] ?? "";
 
-                      // 🔥 DYNAMIC CHECK: Kya yeh local mapped index card already connected hai?
+                      //  DYNAMIC CHECK: Kya yeh local mapped index card already connected hai?
                       final bool isCurrentDeviceConnected =
                           provider.connected &&
                           provider.connectedAddress == address;
@@ -168,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ? null
                                 : () async {
                                     if (isCurrentDeviceConnected) {
-                                      // ✅ Connected hai toh safe clean disconnect execute hoga
+                                      //  Connected hai toh safe clean disconnect execute hoga
                                       await provider.disconnect();
                                     } else {
                                       // 📡 Connected nahi hai toh direct device call handle hoga

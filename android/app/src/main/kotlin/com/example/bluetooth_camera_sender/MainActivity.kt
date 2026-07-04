@@ -102,7 +102,7 @@ class MainActivity : FlutterActivity() {
                         }
                     }
                 }
-                // ✅ ADDED: Nearby device discovery triggers
+                //  ADDED: Nearby device discovery triggers
                 "startDiscovery" -> {
                     discoveredDevicesList.clear()
                     val adapter = bluetoothAdapter
@@ -138,11 +138,11 @@ class MainActivity : FlutterActivity() {
                         result.error("NO_BLUETOOTH", "Hardware adapter not initialized", null)
                     }
                 }
-                // ✅ ADDED: Discovered devices fetch channel link
+                //  ADDED: Discovered devices fetch channel link
                 "getDiscoveredDevices" -> {
                     result.success(discoveredDevicesList)
                 }
-                // ✅ ADDED: Safe live hardware socket disconnect command block
+                //  ADDED: Safe live hardware socket disconnect command block
                 "disconnectDevice" -> {
                     thread {
                         val disconnected = disconnect()
@@ -231,7 +231,7 @@ class MainActivity : FlutterActivity() {
         }
     }
 
-    // ✅ ADDED: Internal core cleanup function for safe hardware disconnect toggles
+    //  ADDED: Internal core cleanup function for safe hardware disconnect toggles
     private fun disconnect(): Boolean {
         return try {
             outputStream?.close()
@@ -246,7 +246,7 @@ class MainActivity : FlutterActivity() {
         }
     }
 
-    // ✅ ADDED: Native activity tracking cleanup listener to completely prevent leaks
+    //  ADDED: Native activity tracking cleanup listener to completely prevent leaks
     override fun onDestroy() {
         super.onDestroy()
         if (isReceiverRegistered) {
